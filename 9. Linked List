@@ -1,1 +1,48 @@
+                                          :: ===========  INTRODUCTION  =========== ::
+-------------------------------------------------------------------------------------------------------------------------------
+          ARRAYLIST    V/S    LINKED LIST
+Insert :=   O(n)     || < ||     O(1)  ==> Linked list is more efficient in case of inserting the element in middle because it's
+                                           gives constant time complexity as compare to arraylist, so use LL whenever necessary.
+ 
+Search :=   O(1)     || > ||     O(n)  ==> Arraylist is more efficient in case of Searching the element from the list because it's
+                                           gives constant time complexity as compare to Linkedlist, so use AL whenever we need to 
+                                           optimized TC.
+                                           
+ 
+ 
+                                           :: =========== BASIC PROPERTY ============ ::
+---------------------------------------------------------------------------------------------------------------------------------
 
+*  VARIABLE SIZE              = we can add as many as element we want until and unless our code memory not get full.
+*  NON-CONTIGUOUS MEMORY      = Its not in kind array (means contineous), its kind of chunks or we can say NODE as well, 
+                                who linked each other.
+                                
+ =>  KEY TO REMEMBER := Last NODE of the LL is link/connect TO "NULL NODE / EMPTY NODE" who is nothing but empty.
+ 
+        __________
+       |  DATA    |  => A Data Item (we can store integer, strings or any type of data).
+       |__________|           
+       | NEXT     |
+       | REFERENCE|  => Pointer (Or Reference) to the next node (connects one node to another) or An address of another node
+       |__________|
+       
+
+=> "HEAD" node is always the first node of linked list, if we store only first element of the linked list we can find the 
+    whole/complete list, because of the reference store in the node.
+    
+      EXAMPLE :        (1)           (2)        (4)
+                     " This "-------" is "    " list " -->> 🚫 [NULL]       ==>> string linkedlist
+                       /               \        /  \          
+                    [HEAD]              \      /   [TAIL]        
+                                         \    /
+                                          " a "
+                                           (3)
+                                           
+                                           
+                                            
+                                     :: ============= TYPES OF LINKED-LIST ============= ::
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+       
+ 
