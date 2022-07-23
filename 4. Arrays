@@ -1,1 +1,142 @@
+*  An array is a collection of items stored at contiguous memory locations. 
+*  The idea is to store multiple items of the same type together.
+*  Arrays in Java are like a list of elements of the same type i.e. a list of integers, a list of
+   booleans etc.
 
+              (method 1) : Creating an Array with new keyword.
+                                int[] marks = new int[3];
+                                marks[0] = 97;
+                                marks[1] = 98;
+                                marks[2] = 95;
+                              
+              (method 2) : Creating an Array.
+                                int[] marks = {98, 97, 95};
+                                
+=======================================================================================================
+
+Q1). Taking an array as an input and printing its elements.
+
+Solution:= 
+
+import java.util.*;
+public class Arrays 
+{
+  public static void main(String args[]) 
+  {
+    Scanner sc = new Scanner(System.in);
+    int size = sc.nextInt();                             // I/p : 4
+    int numbers[] = new int[size];                     
+    
+    for(int i=0; i<size; i++) 
+        numbers[i] = sc.nextInt();                       // I/P : 1 2 3 4
+    
+    for(int i=0; i<numbers.length; i++)                  // print the numbers in array
+        System.out.print(numbers[i]+" ");                // O/P : 1 2 3 4
+  }
+}
+
+======================================================================================================
+
+Q2). Take an array of names as input from the user and print them on the screen.
+
+Solution:=
+
+import java.util.*;
+public class Arrays 
+{
+  public static void main(String args[]) 
+  {
+    Scanner sc = new Scanner(System.in);
+    int size = sc.nextInt();
+    String names[] = new String[size];         
+    
+    for(int i=0; i<size; i++) 
+        names[i] = sc.next();                                            // input
+
+    for(int i=0; i<names.length; i++) 
+        System.out.println("name " + (i+1) +" is : " + names[i]);        //output
+   }
+}
+-------------------------------------------------------------------
+I/P : 4                           O/p : name 1 is : sam
+      sam                               name 2 is : aaaju
+      aaaju                             name 3 is : mini
+      mini                              name 4 is : kajal                         
+      kajal
+
+======================================================================================================
+
+Q3). Find the maximum & minimum number in an array of integers.
+     [HINT : Read about Integer.MIN_VALUE & Integer.MAX_VALUE in Java]
+ 
+Solution:=
+
+import java.util.*;
+public class Arrays 
+{
+  public static void main(String args[]) 
+  {
+    Scanner sc = new Scanner(System.in);
+    int size = sc.nextInt();                              // I/P := 4
+    int numbers[] = new int[size];
+    
+    for(int i=0; i<size; i++)                            
+      numbers[i] = sc.nextInt();                         // I/P:= 1 5 8 7
+
+    int max = Integer.MIN_VALUE;
+    int min = Integer.MAX_VALUE;
+    
+    for(int i=0; i<numbers.length; i++) 
+    {
+      if(numbers[i] < min) 
+        min = numbers[i];
+    
+      if(numbers[i] > max) 
+        max = numbers[i];
+    }                                                       // O/P:=
+    System.out.println("Largest number is : " + max);       // Largest number is : 8
+    System.out.println("Smallest number is : " + min);      // Smallest number is : 1
+  }
+}
+
+=======================================================================================================
+
+Q4). Take an array of numbers as input and check if it is an array sorted in ascending order.
+      Eg : { 1, 2, 4, 7 } is sorted in ascending order.
+           {3, 4, 6, 2} is not sorted in ascending order.
+           
+Solution:=
+
+import java.util.*;
+public class Arrays 
+{
+  public static void main(String args[]) 
+  {
+    Scanner sc = new Scanner(System.in);
+    int size = sc.nextInt();
+    int numbers[] = new int[size];
+
+    for(int i=0; i<size; i++)                  //input
+        numbers[i] = sc.nextInt();
+
+    boolean isAscending = true;
+
+    for(int i=0; i<numbers.length-1; i++)     // NOTICE numbers.length - 1 as termination condition
+    {                                         
+      if(numbers[i] > numbers[i+1])           // This is the condition for descending order                              
+        isAscending = false;
+    }
+    if(isAscending) 
+      System.out.println("The array is sorted in ascending order");
+    else 
+      System.out.println("The array is not sorted in ascending order");
+  }
+}
+--------------------------------------------------------------------------
+I/P: 4                 O/P: The array is not sorted in ascending order.
+     1 5 8 7
+     
+I/P: 4                 O/P: The array is sorted in ascending order.
+     1 2 3 5       
+     
+=============================================================================================================
