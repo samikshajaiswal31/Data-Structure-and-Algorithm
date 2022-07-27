@@ -43,6 +43,143 @@ Search :=   O(1)     || > ||     O(n)  ==> Arraylist is more efficient in case o
                                      :: ============= TYPES OF LINKED-LIST ============= ::
 -------------------------------------------------------------------------------------------------------------------------------
 
+class LL
+{
+    Node head;
+    private int size;
+    
+    LL()
+    {
+      this.size = 0;
+    }
+    
+    class Node
+    {
+        String data;
+        Node next;
+        Node(String data)
+        {
+            this.data = data;
+            this.next = null;
+            size++;
+        }
+    }
+ 
 
+    // add - First,last
+    public void addFirst(String data)
+    {
+        Node newNode = new Node(data);
+        if(head == null)                        // check whether our ll is having node or not 
+        {
+            head = newNode;                    // if ll is empty then assign newNode to head which one and only one element
+            return;
+        }
+
+        newNode.next = head;
+        head = newNode;
+    }
+    public void addLast(String data)
+    {
+        Node newNode = new Node(data);
+        if(head == null)
+        {
+            head = newNode;
+            return;
+        }
+
+        Node currNode = head;
+        while(currNode.next != null)
+        {
+            currNode = currNode.next;
+
+        }
+        currNode.next = newNode;
+    }
+
+
+   public void deleteFirst()
+   {
+     if(head == null)
+     {
+       System.out.print("List is empty")  ;   
+       return;
+     }
+     
+     size--;
+     head = head.next;
+     
+   }
+   
+    public void deleteLast()
+   {
+      if(head == null)                  // corner case when list is empty
+      {
+        System.out.print("List is empty");     
+        return;
+      }
+      
+      size--;
+      if(head.next == null)          // corner case when list having one node
+      {
+        head = null;
+        return;
+      }
+     
+      Node secondLast = head;      
+      Node lastNode = head.next;   //  head.next = null -> lastNode = null
+      
+      while(lastNode.next != null)   // null.next which is nothing
+      {
+        lastNode = lastNode.next;
+        secondLast = secondLast.next;
+      }
+      
+      secondLast.next = null;
+   }
+
+
+
+    public void print()
+    {
+        if(head == null)
+        {
+             System.out.print("List is empty");
+            return;
+        }
+        Node currNode = head;
+        while(currNode != null)
+        {
+            System.out.print(currNode.data + " ");
+            currNode = currNode.next;
+
+        }
+       
+
+    }
+    
+    public int getSize()
+    {
+      return size;
+    }
+   
+
+
+    public static void main(String args[])
+    {
+        LL list = new LL();
+        list.addFirst("a");
+        list.addFirst("is");
+        list.addLast("list");
+        list.addFirst("this");
+        
+        list.deleteFirst();
+        list.deleteLast();
+        list.print();
+        
+        System.out.print(list.getSize());
+        
+    }
+}
        
  
