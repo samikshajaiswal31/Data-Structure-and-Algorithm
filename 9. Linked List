@@ -40,7 +40,7 @@ Search :=   O(1)     || > ||     O(n)  ==> Arraylist is more efficient in case o
                                            
                                            
                                             
-                                     :: ============= TYPES OF LINKED-LIST ============= ::
+                                     :: ============= IMPLEMENTATION OF LINKED LIST ============= ::
 -------------------------------------------------------------------------------------------------------------------------------
 
 class LL
@@ -181,5 +181,53 @@ class LL
         
     }
 }
-       
+
+
+                                 :: ============= MAJOR FUNCTION OF LINKED LIST ============= ::
+-------------------------------------------------------------------------------------------------------------------
+ 
+import java.util.*;
+class LL
+{
+  public static void main(String args[])
+  {
+    LinkedList<String> list = new LinkedList<String>();
+    
+    list.addFirst("a");
+    list.addFirst("is");
+    
+    list.add("list");         // by default it add on last in list
+    list.addFirst("this");    // but on first we need to specify by addFirst
+    
+  
+    System.out.println(list);            //[this, is, a, list]
+    System.out.println(list.size());     // 4
+    
+    String value = "is";
+    
+    for(int i = 0 ; i < list.size() ; i++)   // to iterate the whole list
+    {
+      if(list.get(i) == value)
+        System.out.println("Yes we got the value.");  
+     // System.out.print(list.get(i)+" -> ");            // to get the element form list
+    }
+    //System.out.print("null");  
+    
+    
+    /*list.removeFirst();         // by default is remove from first
+    list.removeFirst();
+    System.out.println(list);
+    
+    list.removeLast();
+    System.out.println(list);*/
+    
+    list.remove(3);              // it delete third node from 0-3
+    System.out.println(list);   // [this, is, a]
+    
+  }
+}
+
+
+
+--------------------------------------------------------------------------------------------------------------------
  
